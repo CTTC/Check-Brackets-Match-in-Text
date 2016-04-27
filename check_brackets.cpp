@@ -42,9 +42,11 @@ int main() {
 			}
 			else
 			{
-				Bracket parenStartOut = opening_brackets_stack.top(); // get the latest left bracket, remove it from stack
+				Bracket parenStartOut = opening_brackets_stack.top(); // get the latest left bracket, 
+				                                                      //remove it from stack
 				opening_brackets_stack.pop();   
-			    if(!parenStartOut.Matchc(next))  // check if the latest left bracket is matched with the current right bracket
+			    if(!parenStartOut.Matchc(next))  // check if the latest left bracket is matched with
+			                                     // the current right bracket
 			    {
                     std::cout << (position + 1) << std::endl; // if not, output the position of this right bracket, break loop
 				    break;
@@ -54,7 +56,8 @@ int main() {
         }
 		if (position == text.length() - 1)  // if reach the end of the string
 		{
-			if (!opening_brackets_stack.empty()) // if the stack is not empty, output the position of left bracket at the end of the stack (the first unmatched one) 
+			if (!opening_brackets_stack.empty()) // if the stack is not empty, output the position of 
+			                                     //left bracket at the end of the stack (the first unmatched one) 
 			{
 				Bracket firstUnMatched('(',0); // initialization, initial values don't matter here
 				while(!opening_brackets_stack.empty())
